@@ -2,8 +2,7 @@
 <html>
         <head>
                 <title>Google Security Captcha</title>
-                <link rel="stylesheet" href="captcha.css">
-                <script src="captcha.js"></script>
+                <link rel="stylesheet" href="captcha.css">           
                 <script src="https://www.google.com/recaptcha/api.js"></script>
                 <script src="https://code.jquery.com/jquery-3.3.1.min.js"
                         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -20,5 +19,22 @@
                 </div>
                 <br>
                 <button id="btn-validate">Submit</button>
+                <script>
+                        $('#btn-validate').click(function () {
+                          var $captcha = $('#recaptcha'),
+                          response = grecaptcha.getResponse();
+
+                           if (response.length === 0) {
+                           $('.msg-error').text("reCAPTCHA is mandatory");
+                           if (!$captcha.hasClass("error")) {
+                           $captcha.addClass("error");
+                         }
+                        } else {
+                           $('.msg-error').text('');
+                           $captcha.removeClass("error");
+                           alert('reCAPTCHA marked');
+                         }
+                        });
+                </script>
         </body>
 </html>
