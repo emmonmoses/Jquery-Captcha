@@ -2,39 +2,47 @@
 <html>
         <head>
                 <title>Google Security Captcha</title>
-                <link rel="stylesheet" href="captcha.css">           
+                <link rel="stylesheet" href="bootstrap.min.css">
+                <link rel="stylesheet" href="captcha.css">                
                 <script src="https://www.google.com/recaptcha/api.js"></script>
-                <script src="https://code.jquery.com/jquery-3.3.1.min.js"
-                        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+                <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+                crossorigin="anonymous"></script>
         </head>
         <body>
-                <span class="msg-error error"></span>
-                Username :
-                <input type="text" name="username">
-                <br><br> Password :&nbsp;
-                <input type="password" name="password">
-                <br><br>
-                <div id="recaptcha" class="g-recaptcha"
-                        data-sitekey="6LfhpGQUAAAAAB8Nfa0INZ-VFqgunbhTK0pFmoVT">
-                </div>
-                <br>
-                <button id="btn-validate">Submit</button>
-                <script>
-                        $('#btn-validate').click(function () {
-                          var $captcha = $('#recaptcha'),
-                          response = grecaptcha.getResponse();
-
-                           if (response.length === 0) {
-                           $('.msg-error').text("reCAPTCHA is mandatory");
-                           if (!$captcha.hasClass("error")) {
-                           $captcha.addClass("error");
-                         }
-                        } else {
-                           $('.msg-error').text('');
-                           $captcha.removeClass("error");
-                           alert('reCAPTCHA marked');
-                         }
-                        });
-                </script>
+                <form id="form">
+                        <div class="form-heading">
+                                <h2>Google Captcha</h2>
+                        </div>
+                        <div class="form-group">
+                                <span class="msg-error error"></span><br>
+                                Username :
+                                <input type="text" class="form-control" placeholder="Username" name="username">
+                                <br> Password :&nbsp;
+                                <input type="password" class="form-control" placeholder="Password" name="password">
+                                <br>
+                                <div id="recaptcha" class="g-recaptcha"
+                                        data-sitekey="6LfhpGQUAAAAAB8Nfa0INZ-VFqgunbhTK0pFmoVT">
+                                </div>
+                                <br>
+                                <button class="btn" id="btn-validate">Login</button>
+                        </div>
+                </form>
         </body>
+        <script>
+        $('#btn-validate').click(function () {
+        var $captcha = $('#recaptcha'),
+            response = grecaptcha.getResponse();
+
+        if (response.length === 0) {
+            $('.msg-error').text("reCAPTCHA is mandatory");
+            if (!$captcha.hasClass("error")) {
+                    $captcha.addClass("error");
+            }
+        } else {
+            $('.msg-error').text('');
+            $captcha.removeClass("error");
+            alert('Welcome to HomePage');
+               }
+        });
+        </script>
 </html>
