@@ -5,8 +5,9 @@ ReCAPTCHA is a CAPTCHA-like system designed to establish that a computer user is
 
 # Requirements
 1. Html
-2.  CSS
+2. CSS
 3. JQuery
+4. Bootstrap 4
 
 # References
 1. https://www.google.com/recaptcha/api.js
