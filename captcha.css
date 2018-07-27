@@ -1,9 +1,103 @@
+body {
+    margin: 40px 0;
+    margin-top: 20px;
+}
+
+#form {
+    max-width: 600px;
+    margin: auto;
+    border: 1px solid #eee;
+}
+
+:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.form-heading {
+    background: #00B16A;
+    padding: 10px 15px;
+}
+
+h2 {
+    color: #fff;
+    margin: 0;
+}
+
+.form-group {
+    max-width: 100%;
+    margin: auto;
+    margin: 15px;
+}
+
+.form-control:focus {
+    box-shadow: none;
+}
+
+.btn {
+    margin-right: 15px;
+    margin-bottom: 15px;
+    background: #00B16A;
+    color: white;
+}
+
+.modal {
+    height: 80%;
+    width: 60%;    
+    margin: auto;
+    border: 1px solid maroon;
+    position: absolute; 
+    display: block;
+    background-color: whitesmoke;
+}
+.bigmodal{
+    width:100%;
+    height:100%;
+    position: fixed;
+      top: 0;
+      background-color: rgb(0,0,0);
+      background-color: rgba(0,0,0,0.9); 
+      
+  }
+.progress {
+    margin-top: 4vh;
+    margin-left: 23vh;        
+}
+
+.progress-button {
+    margin-top: 3vh;
+    margin-left: 13ch;
+}
+
+.btn-continue {
+    background: #00B16A;
+    color: white;
+}
+
+.btn-exit {
+    background: #bd2130;
+    color: white;
+}
+
+.show {
+    background: lightcoral;
+    color: white;
+    text-align: center;
+}
+
+.hide {
+    display: none;
+}
 msg-error {
-    color: #c65848;
+    color:red;
 }
 
 .g-recaptcha.error {
     border: solid 2px #c64848;
     padding: .2em;
     width: 19em;
+}
+msg-error error {
+    color:red;  
 }
